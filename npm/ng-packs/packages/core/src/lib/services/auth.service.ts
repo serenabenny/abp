@@ -38,15 +38,8 @@ export class AuthService {
       .toPromise();
   }
 
-  logout(): Observable<any> {
-    return this.strategy.logout();
-  }
-
-  /**
-   * @deprecated Use navigateToLogin method instead. To be deleted in v5.0
-   */
-  initLogin() {
-    this.strategy.navigateToLogin();
+  logout(queryParams?: Params): Observable<any> {
+    return this.strategy.logout(queryParams);
   }
 
   navigateToLogin(queryParams?: Params) {
